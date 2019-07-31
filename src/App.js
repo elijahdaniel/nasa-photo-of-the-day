@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Copyright from "./components/copyright";
 import Explanation from "./components/explanation";
 import Img from "./components/img";
-import Title from "./components/title"
+import Title from "./components/title";
 import "./App.css";
 import axios from "axios";
 
@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+      .get("https://api.nasa.gov/planetary/apod?api_key=INWhlK0FxCxJ92WchVebMAdeGZxchjhIvmR31LLu")
       .then(info => {
         setData(info.data);
       })
@@ -23,11 +23,15 @@ function App() {
   return (
     <div className="App">
       <h1>NASA's Astronomy Picture of the Day</h1>
-      <Title title={data.title} />
-      <Copyright copy={data.copyright} />
       <div className="bottom">
-      <Img url={data.url} />
-      <Explanation explain={data.explanation}/>
+        <section className="bottomLeft">
+          <Img url={data.hdurl} />
+        </section>
+        <section className="bottomRight">
+          <Title title={data.title} />
+          <Copyright copy={data.copyright} />
+          <Explanation explain={data.explanation} />
+        </section>
       </div>
     </div>
   );
