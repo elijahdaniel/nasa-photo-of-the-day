@@ -3,15 +3,17 @@ import Copyright from "./components/copyright";
 import Explanation from "./components/explanation";
 import Img from "./components/img";
 import Title from "./components/title";
+import Day from "./components/date";
 import "./App.css";
 import axios from "axios";
 import {
   Header,
-  Bottom,
-  BottomL,
-  BottomR,
-  AlignText,
-  Center
+  Contain,
+  BoxOne,
+  BoxTwo,
+  TitleBox,
+  Para,
+  Copy
 } from "./components/styles";
 
 function App() {
@@ -33,29 +35,25 @@ function App() {
   return (
     <div className="App">
       <Header>
-        <h1>NASA's Astronomy Picture of the Day</h1>
+        <h3>NASA's Astronomy Picture of the Day</h3>
       </Header>
-      <Bottom>
-        <div className="bottom">
-          <BottomL>
-            <section className="bottomLeft">
-              <Img url={data.hdurl} />
-            </section>
-          </BottomL>
-          <BottomR>
-            <section className="bottomRight">
-              <Center>
-                <Title title={data.title} />
-              
-              <Copyright copy={data.copyright} />
-              </Center>
-              <AlignText>
-                <Explanation explain={data.explanation} />
-              </AlignText>
-            </section>
-          </BottomR>
-        </div>
-      </Bottom>
+      <Contain>
+        <BoxOne>
+          <Img url={data.hdurl} />
+          <TitleBox>
+            <Title title={data.title} />
+          </TitleBox>
+        </BoxOne>
+        <BoxTwo>
+          <Copy>
+            <Day date={data.date}/>
+          <Copyright copy={data.copyright} />
+          </Copy>
+          <Para>
+          <Explanation explain={data.explanation} />
+          </Para>
+        </BoxTwo>
+      </Contain>
     </div>
   );
 }

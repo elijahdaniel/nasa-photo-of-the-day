@@ -2,40 +2,35 @@ import styled from "styled-components";
 
 export const Header = styled.h1`
   text-align: center;
-  color: white;
   margin: 65px;
+  font-size: 30px;
 `;
 
-export const Bottom = styled.div`
-  color: white;
+export const Contain = styled.div`
+  display: flex;
+  width: 90%;
   margin: 0 auto;
-  box-shadow: 0px 0px 15px 10px #015;
 `;
 
-export const BottomL = styled.div`
+export const BoxOne = styled.div`
   width: 50%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 `;
-
-export const BottomR = styled.div`
+export const BoxTwo = styled.div`
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  box-sizing: border-box;
-  background: #04052e;
 `;
 
-export const AlignText = styled.p`
+export const TitleBox = styled.h2`
+  z-index: 1;
+  position: relative;
+  top: -125px;
+  right: -55px;
+`;
+
+export const Para = styled.p`
   text-align: justify;
-  padding-top: 5px;
   line-height: 35px;
 `;
 
-export const Center = styled.h2`
-  text-align: center;
+export const Copy = styled.span`
+  color: purple;
 `;
